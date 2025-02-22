@@ -20,6 +20,7 @@ const stackOptions = {
     fontWeight: "bold" as "bold",
   },
   contentStyle:{
-    backgroundColor:'#FF7F50'
+    backgroundColor:'#FF7F50',
+    padding: 10
   }
 };
