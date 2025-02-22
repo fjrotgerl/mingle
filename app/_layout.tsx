@@ -5,7 +5,10 @@ import { Text } from 'react-native'
 export default function RootLayout() {
   return (
     <>
-      <Stack screenOptions={stackOptions}></Stack>
+      <Stack screenOptions={stackOptions}>
+        <Stack.Screen name="index" />
+        <Stack.Screen name="test" />
+      </Stack>
       <MFooter />
     </>
   );
