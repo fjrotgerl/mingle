@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
       flexDirection: "row",
       gap: 20,
       height: 90,
-      backgroundColor: "#222",
+      backgroundColor: "#1D0B04",
       justifyContent: "space-evenly",
     },
     button: {
