@@ -28,6 +28,8 @@ const styles = StyleSheet.create({
         height: 90,
         backgroundColor: "#1D0B04",
         justifyContent: "space-evenly",
+        borderTopColor: "#888",
+        borderWidth: 1
     },
     button: {
         flexDirection: "row",

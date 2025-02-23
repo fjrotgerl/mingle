@@ -57,6 +57,7 @@ const style = StyleSheet.create({
         backgroundColor: "#3A150799",
         width: "100%",
         borderRadius: 10,
+        marginBlock: 5
     },
     header: {
         backgroundColor: "#1D0B04",

@@ -1,7 +1,9 @@
 import { MEventItem } from "@/components/ui/MEventItem";
-import { Text, View, StyleSheet } from "react-native";
+import { MFilter } from "@/components/ui/MFilter";
+import { StyleSheet, FlatList } from "react-native";
+import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
 
-export default function Index() {
+export default function HomePage() {
     const data: any = [
         {
             id: 0,
@@ -17,30 +19,52 @@ export default function Index() {
             maxParticipants: 2,
             dateStart: "20:00 PM - 13/11/2026",
         },
+        {
+            id: 2,
+            title: "Cena tranquila en la playa",
+            actualParticipants: 1,
+            maxParticipants: 2,
+            dateStart: "20:00 PM - 13/11/2026",
+        },
+        {
+            id: 3,
+            title: "Cena tranquila en la playa",
+            actualParticipants: 1,
+            maxParticipants: 2,
+            dateStart: "20:00 PM - 13/11/2026",
+        },
+        {
+            id: 4,
+            title: "Cena tranquila en la playa",
+            actualParticipants: 1,
+            maxParticipants: 2,
+            dateStart: "20:00 PM - 13/11/2026",
+        },
     ];
 
     return (
-        <View
-            style={{
-                flex: 1,
-                alignItems: "center",
-            }}
-        >
-            <Text>Inicio</Text>
+        <SafeAreaProvider>
+            <SafeAreaView style={styles.container}>
+                {/* Filtro */}
+                <MFilter />
 
-            <View style={style.eventsContainer}>
-                {data.map((item: any) => {
-                    return <MEventItem data={item} />;
-                })}
-            </View>
-        </View>
+                {/* Eventos */}
+                <FlatList 
+                    data={data}
+                    renderItem={({item}) => <MEventItem key={item.id} data={item} />}
+                    keyExtractor={item => item.id}
+                    style={styles.eventsContainer}
+                />
+            </SafeAreaView>
+        </SafeAreaProvider>
     );
 }
 
-const style = StyleSheet.create({
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+    },
     eventsContainer: {
         width: "100%",
-        gap: 10,
-        paddingBlock: 5,
     },
 });
