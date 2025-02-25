@@ -2,7 +2,7 @@ import { Pressable, Text, StyleSheet } from "react-native";
 
 interface MButtonProps {
     text: string,
-    onPress: () => void
+    onPress?: () => void
 }
 
 export const MButton: React.FC<MButtonProps> = ({ 
@@ -26,13 +26,12 @@ export const MButton: React.FC<MButtonProps> = ({
 
 const style = StyleSheet.create({
     button: {
-        borderRadius: 5
+        borderRadius: 5,
     },
     text: {
         color: 'white',
         fontWeight: 'bold',
         textAlign: 'center',
-        paddingBlock: 10,
-        
+        padding: 10,
     }
 })

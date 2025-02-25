@@ -1,9 +1,14 @@
+import { MHeaderHome } from "@/components/layout/MHeaderHome";
+import { MButton } from "@/components/ui/MButton";
 import { MEventItem } from "@/components/ui/MEventItem";
 import { MFilter } from "@/components/ui/MFilter";
-import { StyleSheet, FlatList } from "react-native";
+import { useRouter } from "expo-router";
+import { StyleSheet, FlatList, View, Pressable } from "react-native";
 import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
 
 export default function HomePage() {
+    const router = useRouter();
+
     const data: any = [
         {
             id: 0,
@@ -45,16 +50,33 @@ export default function HomePage() {
     return (
         <SafeAreaProvider>
             <SafeAreaView style={styles.container}>
-                {/* Filtro */}
-                <MFilter />
+                <MHeaderHome></MHeaderHome>
+                <View>
+                    <View style={styles.addAndFilterContainer}>
+                        {/* Filtro */}
+                        <View style={styles.fullWidth}>
+                            <MFilter />
+                        </View>
 
-                {/* Eventos */}
-                <FlatList 
-                    data={data}
-                    renderItem={({item}) => <MEventItem key={item.id} data={item} />}
-                    keyExtractor={item => item.id}
-                    style={styles.eventsContainer}
-                />
+                        {/* Añadir nuevo evento */}
+                        <MButton
+                            text={"Crear evento"}
+                            onPress={() => {
+                                router.push("/new-event");
+                            }}
+                        ></MButton>
+                    </View>
+
+                    {/* Eventos */}
+                    <FlatList
+                        data={data}
+                        renderItem={({ item }) => (
+                            <MEventItem key={item.id} data={item} />
+                        )}
+                        keyExtractor={(item) => item.id}
+                        style={styles.eventsContainer}
+                    />
+                </View>
             </SafeAreaView>
         </SafeAreaProvider>
     );
@@ -66,5 +88,15 @@ const styles = StyleSheet.create({
     },
     eventsContainer: {
         width: "100%",
+        marginTop: 8,
+    },
+    addAndFilterContainer: {
+        flexDirection: "row",
+        gap: 20,
+        justifyContent: "center",
+        alignContent: "center",
+    },
+    fullWidth: {
+        flex: 1,
     },
 });

@@ -1,6 +1,6 @@
 import { MFooter } from "@/components/layout/MFooter";
 import { Stack } from "expo-router";
-import { Text } from "react-native";
+
 
 export default function RootLayout() {
     return (
@@ -34,6 +34,10 @@ const stackScreenData = [
         name: "(tabs)/user-settings/index",
         title: "Opciones",
     },
+    {
+        name: "new-event/index",
+        title: "Crear evento",
+    },
 ];
 
 const stackOptions = {
@@ -45,8 +49,8 @@ const stackOptions = {
         fontWeight: "bold" as "bold",
     },
     contentStyle: {
-        backgroundColor: "#FF7F50",
-        paddingTop: 10,
+        backgroundColor: "#333",
         paddingInline: 10,
+        paddingBottom: 10,
     },
 };
