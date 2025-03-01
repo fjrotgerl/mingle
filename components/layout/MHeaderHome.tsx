@@ -11,7 +11,7 @@ export const MHeaderHome = () => {
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: "#1D0B04",
+        backgroundColor: "#FF7F50",
         padding: 10,
         marginBlock: 10,
         borderRadius: 8

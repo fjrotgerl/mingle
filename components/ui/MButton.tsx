@@ -14,7 +14,7 @@ export const MButton: React.FC<MButtonProps> = ({
             onPress={onPress}
             style={({pressed}) => [
                 {
-                    backgroundColor: pressed ? '#5A3DFE' : '#4625FF'
+                    backgroundColor: pressed ? '#FF7F50' : '#000'
                 },
                 style.button
             ]}
@@ -27,6 +27,7 @@ export const MButton: React.FC<MButtonProps> = ({
 const style = StyleSheet.create({
     button: {
         borderRadius: 5,
+        justifyContent: 'center'
     },
     text: {
         color: 'white',

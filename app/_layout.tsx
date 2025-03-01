@@ -42,14 +42,14 @@ const stackScreenData = [
 
 const stackOptions = {
     headerStyle: {
-        backgroundColor: "#1D0B04",
+        backgroundColor: "#FF7F50",
     },
     headerTintColor: "#fff",
     headerTitleStyle: {
         fontWeight: "bold" as "bold",
     },
     contentStyle: {
-        backgroundColor: "#333",
+        backgroundColor: "#fff",
         paddingInline: 10,
         paddingBottom: 10,
     },

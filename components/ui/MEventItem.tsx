@@ -27,7 +27,7 @@ export const MEventItem: React.FC<MEventItemProps> = ({ data }) => {
                     {/* Usuarios unidos */}
                     <View style={style.row}>
                         <View style={style.icon}>
-                            <MGroupIcon width={25} height={25} />
+                            <MGroupIcon width={25} height={25} fill="#FF7F50" />
                         </View>
                         <Text style={style.text}>
                             {data.actualParticipants} / {data.maxParticipants}
@@ -37,7 +37,7 @@ export const MEventItem: React.FC<MEventItemProps> = ({ data }) => {
                     {/* Fecha */}
                     <View style={style.row}>
                         <View style={style.icon}>
-                            <MCalendarIcon width={20} height={20} />
+                            <MCalendarIcon width={20} height={20} fill="#FF7F50" />
                         </View>
                         <Text style={style.text}>{data.dateStart}</Text>
                     </View>
@@ -54,13 +54,15 @@ export const MEventItem: React.FC<MEventItemProps> = ({ data }) => {
 
 const style = StyleSheet.create({
     container: {
-        backgroundColor: "#3A150799",
+        backgroundColor: "#fff",
         width: "100%",
-        borderRadius: 10,
-        marginBlock: 5
+        borderRadius: 13,
+        marginBlock: 5,
+        borderWidth: 2,
+        borderColor: "#FF7F50"
     },
     header: {
-        backgroundColor: "#1D0B04",
+        backgroundColor: "#FF7F50",
         width: "100%",
         paddingBlock: 15,
         borderTopStartRadius: 10,
@@ -90,7 +92,7 @@ const style = StyleSheet.create({
         alignItems: 'center'
     },
     text: {
-        color: "white",
+        color: "#555",
         fontWeight: "600",
         fontSize: 15,
     },

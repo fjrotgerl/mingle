@@ -4,7 +4,7 @@ import SelectDropdown from "react-native-select-dropdown";
 export const MFilter = () => {
     const emojisWithIcons = [
         { title: "Más recientes", icon: "" },
-        { title: "Más relevantes", icon: "" },
+        { title: "Más relevantes", icon: "" }
     ];
 
     return (
@@ -24,18 +24,22 @@ export const MFilter = () => {
             }}
             renderItem={(item, index, isSelected) => {
                 return (
-                    <View
-                        style={{
-                            ...styles.dropdownItemStyle,
-                            ...(isSelected && {
-                                backgroundColor: "#D2D9DF",
-                            }),
-                        }}
-                    >
-                        <Text style={styles.dropdownItemTxtStyle}>
-                            {item.title}
-                        </Text>
-                    </View>
+                    <>
+                        <View
+                            style={{
+                                ...styles.dropdownItemStyle,
+                                ...(isSelected && {
+                                    backgroundColor: "#D2D9DF",
+                                }),
+                            }}
+                        >
+                            <Text style={styles.dropdownItemTxtStyle}>
+                                {item.title}
+                            </Text>
+                        </View>
+
+                        { index < emojisWithIcons.length - 1 && <View style={styles.dropdownSeparator}></View>}
+                    </>
                 );
             }}
             showsVerticalScrollIndicator={false}
@@ -46,13 +50,13 @@ export const MFilter = () => {
 
 const styles = StyleSheet.create({
     text: {
-        color: "white",
+        color: "#000",
         fontWeight: "bold",
         textAlign: "center",
     },
     dropdownButtonStyle: {
         borderWidth: 2,
-        borderColor: "#1D0B04",
+        borderColor: "#FF7F50",
         padding: 8,
         borderRadius: 100,
         flexDirection: "row",
@@ -64,7 +68,7 @@ const styles = StyleSheet.create({
         flex: 1,
         fontSize: 18,
         fontWeight: "500",
-        color: "white",
+        color: "black",
     },
     dropdownButtonArrowStyle: {
         fontSize: 28,
@@ -75,7 +79,9 @@ const styles = StyleSheet.create({
     },
     dropdownMenuStyle: {
         backgroundColor: "#E9ECEF",
-        borderRadius: 8,
+        borderRadius: 10,
+        marginTop: 5,
+        borderColor: "black",
     },
     dropdownItemStyle: {
         width: "100%",
@@ -94,5 +100,11 @@ const styles = StyleSheet.create({
     dropdownItemIconStyle: {
         fontSize: 28,
         marginRight: 8,
+    },
+    dropdownSeparator: {
+        width: "90%",
+        height: 1,
+        backgroundColor: "#888",
+        marginHorizontal: 10
     },
 });

@@ -26,9 +26,9 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         gap: 20,
         height: 90,
-        backgroundColor: "#1D0B04",
+        backgroundColor: "#FF7F50",
         justifyContent: "space-evenly",
-        borderTopColor: "#888",
+        borderTopColor: "#DC6336",
         borderWidth: 1
     },
     button: {
