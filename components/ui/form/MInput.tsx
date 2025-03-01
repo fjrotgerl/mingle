@@ -36,7 +36,8 @@ export const MInput: React.FC<MInputProps> = ({
 };
 
 const styles = StyleSheet.create({
-    container: {},
+    container: {
+    },
     label: {
         paddingBlock: 4,
         fontWeight: "600",
@@ -60,6 +61,6 @@ const styles = StyleSheet.create({
         borderColor: "#FF7F50",
     },
     input: {
-        flex: 1,
+        flex: 1
     },
 });
