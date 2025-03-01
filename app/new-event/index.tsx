@@ -1,4 +1,5 @@
 
+import { MTitle } from "@/components/ui/text/MTItle";
 import { StyleSheet, Text } from "react-native";
 import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
 
@@ -9,7 +10,7 @@ export default function HomePage() {
     return (
         <SafeAreaProvider>
             <SafeAreaView style={styles.container}>
-                <Text>aaaaa</Text>
+                <MTitle title="Crear un evento" subtitle="Lore ipsum lore ipsum lore ipsum" />
             </SafeAreaView>
         </SafeAreaProvider>
     );
